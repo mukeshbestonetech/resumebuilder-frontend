@@ -38,6 +38,7 @@ export default function SignIn() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 mt-1 border rounded-md"
+              autoComplete="email"
             />
           </div>
           <div className="mb-4">
@@ -47,6 +48,7 @@ export default function SignIn() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 mt-1 border rounded-md"
+              autoComplete="current-password"
             />
           </div>
           <button type="submit" className="w-full py-2 text-white bg-blue-500 rounded-md">
