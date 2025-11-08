@@ -17,17 +17,18 @@ export const authOptions: NextAuthOptions = {
         // This is where you'll call your Node.js backend to validate credentials.
         // The backend should return the user object along with JWT tokens.
         try {
+          console.log("Authorize Credentials:", credentials);
           const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
             method: 'POST',
             body: JSON.stringify(credentials),
             headers: { "Content-Type": "application/json" }
           });
-
+          console.log("Authorize Response Status:", res);
           const user = await res.json();
-
+          console.log("Authorize User:", user);
           // If the response is OK and we have a user object with an access token, proceed.
-          if (res.ok && user && user.accessToken) {
-            return user;
+          if ( user && user.data?.accessToken) {
+            return user.data;
           }
         } catch (error) {
           console.error("Authorize Error:", error);
