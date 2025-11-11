@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <div className="flex flex-col min-h-screen">
       <LandingHeader />
-      <div className="flex-grow">
+      <div className="flex-grow bg-white">
         {children}
       </div>
       <LandingFooter />
