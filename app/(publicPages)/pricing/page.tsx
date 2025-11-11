@@ -59,7 +59,6 @@ export default function PricingPage() {
       successUrl: `${window.location.origin}/dashboard?subscribed=1`,
       cancelUrl: `${window.location.origin}/pricing`
     });
-    console.log("Checkout Session Response:", resp);
     window.location = resp?.data?.url;
   };
 
