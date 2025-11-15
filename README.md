@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👋 Hi, I'm Mukesh Rawat
+🚀 Full Stack Developer | MERN | Next.js | TypeScript  
+💼 7+ years experience building scalable web platforms
 
-## Getting Started
+### 🔧 Skills
+React • Node.js • Express • MongoDB • Next.js • Redux • TypeScript • Docker • GraphQL • Nestjs • Postgresql     
 
-First, run the development server:
+
+# AI Resume Builder
+
+!Resume Builder UI <!-- Replace with a screenshot of your application -->
+
+A full-stack application designed to help users create professional resumes effortlessly with the power of AI. This project features a Next.js frontend and a Node.js/Express backend, integrated with OpenAI for content generation and Stripe for payment processing.
+
+## ✨ Key Features
+
+*   **AI-Powered Content**: Automatically generate professional summaries for your resume using OpenAI's GPT models.
+*   **Dynamic Resume Management**: Full CRUD functionality to create, read, update, and delete resumes.
+*   **Modern UI/UX**: A sleek, responsive interface built with Next.js and Tailwind CSS.
+*   **Customizable Templates**: Choose from multiple modern resume templates.
+*   **PDF Generation**: Download your resume as a high-quality PDF.
+*   **User Authentication**: Secure user sign-up and login with JWT-based authentication (access and refresh tokens).
+*   **Subscription Plans**: A multi-tiered pricing page (Free, Basic, Pro) with different resume limits.
+*   **Stripe Integration**: Seamless and secure payment processing for plan upgrades.
+*   **User Dashboard**: Visualize credit usage and other stats with interactive charts.
+*   **API Documentation**: Interactive API documentation powered by Swagger.
+
+## 🛠️ Tech Stack
+
+### Frontend
+*   **Framework**: Next.js
+*   **Styling**: Tailwind CSS
+*   **State Management**: React Hooks
+*   **Forms**: React Hook Form & Yup
+*   **API Client**: Axios
+*   **Authentication**: NextAuth.js
+*   **UI Components**: Lucide React (icons), Chart.js (charts), React Toastify (notifications)
+
+### Backend
+*   **Framework**: Express.js
+*   **Database**: MongoDB with Mongoose
+*   **Authentication**: JSON Web Token (JWT)
+*   **AI Integration**: OpenAI SDK
+*   **Payments**: Stripe
+*   **PDF Generation**: Puppeteer
+*   **API Documentation**: Swagger UI Express
+
+## 🚀 Getting Started
+
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+*   Node.js (v18 or later)
+*   npm or yarn
+*   MongoDB instance (local or cloud)
+
+
+
+### 2. Frontend Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Navigate to the frontend directory
+cd resumebuilder-frontend
+
+# Install dependencies
+npm install
+
+# Create a .env.local file from the example
+cp .env.local.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Update the `.env.local` file:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=a_very_strong_secret_for_nextauth
 
-## Learn More
+NEXT_PUBLIC_STRIPE_BASIC_PRICE_ID=your_stripe_basic_price_id
+NEXT_PUBLIC_STRIPE_PRO_PRICE_ID=your_stripe_pro_price_id
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the frontend development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open http://localhost:3000 with your browser to see the result.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Backend Setup
 
-## Deploy on Vercel
+```bash
+# Navigate to the backend directory
+cd resumebuilder-backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Install dependencies
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Create a .env file from the example
+cp .env.example .env
+```
+
+Update the `.env` file with your credentials:
+
+```env
+PORT=8000
+MONGODB_URI=your_mongodb_connection_string
+CORS_ORIGIN=http://localhost:3000
+
+ACCESS_TOKEN_SECRET=your_super_secret_access_token
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=your_super_secret_refresh_token
+REFRESH_TOKEN_EXPIRY=10d
+
+OPENAI_API_KEY=your_openai_api_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+```
+
+Finally, run the backend server:
+```bash
+npm run dev
+```
+
+## 📖 API Documentation
+
+Once the backend server is running, you can access the interactive API documentation at:
+http://localhost:8000/api-docs
+
+## 📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
